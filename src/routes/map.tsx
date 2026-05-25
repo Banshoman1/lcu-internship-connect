@@ -16,8 +16,8 @@ const WORK_TYPES: ("All" | WorkType)[] = ["All", "Remote", "On-Site", "Hybrid"];
 
 function MapPage() {
   const { profile } = useProfile();
-  const [origin, setOrigin] = useState(LCU_LOCATION);
-  const [originLabel, setOriginLabel] = useState(LCU_LOCATION.label);
+  const [origin, setOrigin] = useState<{ lat: number; lng: number }>({ lat: LCU_LOCATION.lat, lng: LCU_LOCATION.lng });
+  const [originLabel, setOriginLabel] = useState<string>(LCU_LOCATION.label);
   const [gpsEnabled, setGpsEnabled] = useState(false);
   const [course, setCourse] = useState<string>("All Courses");
   const [work, setWork] = useState<"All" | WorkType>("All");
